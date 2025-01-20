@@ -15,7 +15,15 @@
 #nav {
     height:145px;
     width:100%;
-    background-color: red;
+    background: hsla(50, 61%, 18%, 1);
+
+background: linear-gradient(90deg, hsla(50, 61%, 18%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(50, 61%, 18%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(50, 61%, 18%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#4A4112", endColorstr="#FBE9D7", GradientType=1 );
     display:flex;
     align-items: center;
     justify-content: flex-start;
