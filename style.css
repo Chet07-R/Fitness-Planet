@@ -13,7 +13,7 @@
   }
 
 #nav {
-    height:145px;
+    height:85px;
     width:100%;
     background: hsla(50, 61%, 18%, 1);
 
@@ -35,6 +35,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#4A4112", en
 #nav img{
     height: 130px;
     border-radius: 10px;
+    padding: 25px;
+    margin: 10px;
 }
 
 #nav h4{
@@ -47,4 +49,35 @@ video{
     width: 100%;
     object-fit: cover;
     position: fixed;
+}
+
+
+.navbar a{
+    position: relative;
+    font-size: 15px;
+    color:#fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    transition: all 0.9s;
+}
+
+.navbar a:hover{
+    color: rgba(221, 237, 45, 0.751); 
+}
+
+.navbar a::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: 0.9s;
+}
+
+.navbar a:hover::before{
+    width: 100%;
+    background: rgb(234, 170, 68);
 }
