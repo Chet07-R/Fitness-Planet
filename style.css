@@ -90,7 +90,6 @@ video{
 }
 
 .a{
-    position: relative;
     font-size: 30px;
     font-family: "Poppins", sans-serif;
     
@@ -99,7 +98,6 @@ video{
 .page1{
     height: 100vh;
     width: 100%;
-    position: relative;
     display: flex;
     align-items: center; 
     justify-content: center;
