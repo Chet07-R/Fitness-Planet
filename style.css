@@ -90,3 +90,20 @@ video{
     -webkit-filter: blur(4px);
     justify-content: flex-start;
 }
+
+#main{
+    position: relative;
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
