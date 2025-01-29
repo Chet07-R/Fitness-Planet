@@ -114,13 +114,13 @@ video{
     flex-direction: column;
 }
 
-#page1 h1{
-    font-size: 140px;
+.page1 h1{
+    font-size: 75px;
     font-weight: 900;
     position: relative;
 }
 
-#page1 h1::before{
+.page1 h1::before{
     content:"STAY FOCUSED. STAY FIT.";
     position: absolute;
     color:#000;
@@ -130,15 +130,3 @@ video{
     z-index: -1;
 }
 
-#page1 h2{
-    font-size: 30px;
-    font-weight: 800;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-#page1 p{
-    font-size: 20px;
-    font-weight: 500;
-    width: 40%;
-}
