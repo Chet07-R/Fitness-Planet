@@ -15,7 +15,7 @@ body {
 #nav {
     height:100px;
     width:100%;
-    background: rgb(2, 2, 2);
+    background-color: hsla(0, 0%, 0%, 0.6);
 
 /* background: linear-gradient(90deg, hsla(50, 61%, 18%, 1) 0%, hsla(30, 82%, 91%, 1) 100%); */
 
