@@ -9,11 +9,11 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(90deg, #737373, #da7b7b);
+    background: black;
 }
 
 .login{
-    color:rgb(197, 30, 30);
+    color:#fff;
 }
 
 .container{
@@ -72,7 +72,7 @@ form{
     border: none;
     outline: none;
     font-size: 16px;
-    color: #ea0000;
+    color: #fff;
     font-weight: 500;
 }
 
@@ -87,7 +87,7 @@ form{
     top: 50%;
     transform: translateY(-50%); 
     font-size: 20px; 
-    color: #de3131; 
+    color: #888; 
 }
 
 .forgot-link{
@@ -96,12 +96,12 @@ form{
 
 .forgot-link a{
     font-size: 14.5px;
-    color:#a08080;
+    color:#fff;
     text-decoration: none;
 }
 
 .social{
-    color:#a08080;
+    color:#fff;
 }
 
 .btn{
