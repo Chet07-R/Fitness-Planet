@@ -9,16 +9,20 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
+    background: linear-gradient(90deg, #737373, #da7b7b);
+}
+
+.login{
+    color:rgb(197, 30, 30);
 }
 
 .container{
     position: relative;
     width: 850px;
     height: 550px;
-    background: #fff;
+    background: #323232;
     border-radius: 30px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+    box-shadow: 0 0 30px rgba(69, 69, 69, 0.2);
     margin: 20px;
     overflow: hidden;
 }
@@ -28,10 +32,10 @@ body{
     right: 0;
     width: 50%;
     height: 100%;
-    background: #fff;
+    background: #333333;
     display: flex;
     align-items: center;
-    color: #333;
+    color: #ffffff;
     text-align: center;
     padding: 40px;
     z-index: 1;
@@ -63,12 +67,12 @@ form{
 .input-box input{
     width: 100%;
     padding: 13px 50px 13px 20px;
-    background: #eee;
+    background: #000000;
     border-radius: 8px;
     border: none;
     outline: none;
     font-size: 16px;
-    color: #333;
+    color: #ea0000;
     font-weight: 500;
 }
 
@@ -83,7 +87,7 @@ form{
     top: 50%;
     transform: translateY(-50%); 
     font-size: 20px; 
-    color: #888; 
+    color: #de3131; 
 }
 
 .forgot-link{
@@ -92,20 +96,24 @@ form{
 
 .forgot-link a{
     font-size: 14.5px;
-    color: #333;
+    color:#a08080;
     text-decoration: none;
+}
+
+.social{
+    color:#a08080;
 }
 
 .btn{
     width: 100%;
     height: 48px;
-    background: #7494ec;
+    background: #ec7474;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     border: none;
     cursor: pointer;
     font-size: 16px;
-    color: #fff;
+    color: #1e1b1b;
     font-weight: 600;
 }
 
@@ -114,20 +122,32 @@ form{
     margin: 15px 0;
 }
 
-.social-icons{
+.social-icons a{
     display: flex;
     justify-content: center;
-}
-
-.social-icons a{
     display: inline-flex;
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 8px;
     font-size: 24px;
-    color: #333;
     text-decoration: none;
     margin: 0 8px;
+}
+
+.social-icons .bxl-google{
+    color:rgb(211, 73, 73);
+}
+
+.social-icons .bxl-facebook{
+    color:rgb(88, 88, 188);
+}
+
+.social-icons .bxl-github{
+    color:white;
+}
+
+.social-icons .bxl-linkedin{
+    color:lightblue;
 }
 
 .form-box.register{
@@ -146,7 +166,7 @@ form{
     left: -250%;
     width: 300%;
     height: 100%;
-    background: #7494ec;
+    background: #ec7474;
     border-radius: 150px;
     z-index: 2;
     transition: 1.8s ease-in-out;
@@ -161,7 +181,7 @@ form{
     position: absolute;
     width: 50%;
     height: 100%;
-    color: #fff;
+    color: #1e1b1b;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -198,7 +218,7 @@ form{
     width: 160px;
     height: 46px;
     background: transparent;
-    border: 2px solid #fff;
+    border: 2px solid #000000;
     box-shadow: none;
 }
 
