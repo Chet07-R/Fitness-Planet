@@ -8,37 +8,30 @@
 
 html,
 body {
-    height: 100%; 
+    height: 100%;
     width: 100%;
 }
 
 #nav {
-    height:100px;
-    width:100%;
+    height: 100px;
+    width: 100%;
     background-color: hsla(0, 0%, 0%, 0.6);
-
-/* background: linear-gradient(90deg, hsla(50, 61%, 18%, 1) 0%, hsla(30, 82%, 91%, 1) 100%); */
-
-/* background: -moz-linear-gradient(90deg, hsla(50, 61%, 18%, 1) 0%, hsla(30, 82%, 91%, 1) 100%); */
-
-/* background: -webkit-linear-gradient(90deg, hsla(50, 61%, 18%, 1) 0%, hsla(30, 82%, 91%, 1) 100%); */
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#4A4112", endColorstr="#FBE9D7", GradientType=1 );
-    display:flex;
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#4A4112", endColorstr="#FBE9D7", GradientType=1);
+    display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 0 150px;
-    position:fixed;
-    gap:50px;
+    position: fixed;
+    gap: 50px;
 }
 
-.navb{
+.navb {
     display: flex;
     align-items: center;
     margin-left: 15px;
 }
 
-#nav img{
+#nav img {
     height: 150px;
     width: 150px;
     border-radius: 10px;
@@ -46,12 +39,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#4A4112", en
     margin: 10px;
 }
 
-#nav h4{
+#nav h4 {
     text-transform: uppercase;
     font-weight: 500;
 }
 
-video{
+video {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -59,11 +52,10 @@ video{
     -webkit-filter: blur(4px);
 }
 
-
-.navbar a{
+.navbar a {
     position: relative;
     font-size: 15px;
-    color:#fff;
+    color: #fff;
     font-weight: 500;
     text-decoration: none;
     margin-left: 40px;
@@ -71,11 +63,11 @@ video{
     margin-right: 50px;
 }
 
-.navbar a:hover{
-    color: #f6f0f099; 
+.navbar a:hover {
+    color: #f6f0f099;
 }
 
-.navbar a::before{
+.navbar a::before {
     content: '';
     position: absolute;
     top: 100%;
@@ -86,12 +78,12 @@ video{
     transition: 0.9s;
 }
 
-.navbar a:hover::before{
+.navbar a:hover::before {
     width: 100%;
     background-color: #cdc7c7b1;
 }
 
-video{
+video {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -99,34 +91,45 @@ video{
     position: fixed;
 }
 
-.a{
+.a {
     font-size: 30px;
     font-family: "Poppins", sans-serif;
-    
 }
 
-.page1{
+.page1 {
     height: 100vh;
     width: 100%;
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.page1 h1{
+/* Animated Moving Outline Effect */
+@keyframes outlineAnimation {
+    0% { -webkit-text-stroke: 2px #b22222; } /* Firebrick */
+    25% { -webkit-text-stroke: 2px #d2691e; } /* Chocolate */
+    50% { -webkit-text-stroke: 2px #deb887; } /* Burlywood */
+    75% { -webkit-text-stroke: 2px #f4a460; } /* Sandy Brown */
+    100% { -webkit-text-stroke: 2px #daa520; } /* Goldenrod */
+}
+
+
+.page1 h1 {
     font-size: 75px;
     font-weight: 900;
     position: relative;
+    text-transform: uppercase;
 }
 
-.page1 h1::before{
-    content:"STAY FOCUSED. STAY FIT.";
+.page1 h1::before {
+    content: "STAY FOCUSED. STAY FIT.";
     position: absolute;
-    color:#000;
-    top:-4px;
-    left:-4px;
+    color: transparent;
+    top: -4px;
+    left: -4px;
     -webkit-text-stroke: 2px orange;
     z-index: -1;
+    animation: outlineAnimation 5s infinite ease-in-out;
+   
 }
-
