@@ -33,7 +33,7 @@ body {
 #nav {
     height: 100px;
     width: 100%;
-    background-color: hsla(0, 0%, 0%, 0.6);
+    background-color: hsla(0, 0%, 0%, 0);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#4A4112", endColorstr="#FBE9D7", GradientType=1);
     display: flex;
     align-items: center;
