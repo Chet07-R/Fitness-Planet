@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness Planet</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bmi.css">
 </head>
 
 <body>
@@ -30,6 +31,21 @@
         </div>
     </div>
     <script src="script.js"></script>
-</body>
 
+    <div class="bmi">
+        <h1>Body Mass Index (BMI) Calculator</h1>
+        <div>
+            Height : <input type="number" class="input" id="height" placeholder="Enter your Height in cm">
+        </div>
+        <div>
+            Weight : <input type="number" class="input" id="weight" placeholder="Enter your Weight in kg">
+        </div>
+        <button class="btn" id="btn">Calculate BMI</button>
+        <input disabled type="text" class="input" id="bmi-result">
+        <h4 class="info-text">
+            Weight Condition: <span id="weight-condition"></span>
+        </h4>
+    </div>
+    <script src="bmi.js"></script>
+</body>
 </html>
