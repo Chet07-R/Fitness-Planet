@@ -44,7 +44,7 @@ body {
 }
 
 .navb {
-    position: fixed;
+    position: relative;
     display: flex;
     align-items: center;
     margin-left: 15px;
@@ -151,9 +151,4 @@ video {
     -webkit-text-stroke: 2px orange;
     z-index: -1;
     animation: outlineAnimation 5s infinite ease-in-out;
-}
-
-.bmi{
-    /* position: fixed; */
-    top: 500px;
 }
