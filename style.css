@@ -44,6 +44,7 @@ body {
 }
 
 .navb {
+    position: relative;
     display: flex;
     align-items: center;
     margin-left: 15px;
@@ -121,6 +122,7 @@ video {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    /* position: fixed; */
 }
 
 /* Animated Moving Outline Effect */
