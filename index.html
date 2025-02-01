@@ -24,28 +24,32 @@
     <div id="cursor"></div>
     <div id="cursor-blur"></div>
     <video autoplay loop muted src="a Cinematic Fitness VideoSONY.mp4"></video>
-    <div class="a">
-        <div class="page1">
-            <h1>STAY FOCUSED. STAY FIT.</h1>
-            <h5>WELCOME TO PLANET FITNESS FAMILY</h5>
+    <div>
+        <header class="a">
+            <div class="page1">
+                <h1>STAY FOCUSED. STAY FIT.</h1>
+                <h5>WELCOME TO PLANET FITNESS FAMILY</h5>
+            </div>
+        </header>
+        <div class="bmi">
+            <h1>Body Mass Index (BMI) Calculator</h1>
+            <div>
+                Height : <input type="number" class="input" id="height" placeholder="Enter your Height in cm">
+            </div>
+            <div>
+                Weight : <input type="number" class="input" id="weight" placeholder="Enter your Weight in kg">
+            </div>
+            <button class="btn" id="btn">Calculate BMI</button>
+            <input disabled type="text" class="input" id="bmi-result">
+            <h4 class="info-text">
+                Weight Condition: <span id="weight-condition"></span>
+            </h4>
         </div>
     </div>
-    <script src="script.js"></script>
 
-    <div class="bmi">
-        <h1>Body Mass Index (BMI) Calculator</h1>
-        <div>
-            Height : <input type="number" class="input" id="height" placeholder="Enter your Height in cm">
-        </div>
-        <div>
-            Weight : <input type="number" class="input" id="weight" placeholder="Enter your Weight in kg">
-        </div>
-        <button class="btn" id="btn">Calculate BMI</button>
-        <input disabled type="text" class="input" id="bmi-result">
-        <h4 class="info-text">
-            Weight Condition: <span id="weight-condition"></span>
-        </h4>
-    </div>
+    <script src="script.js"></script>
     <script src="bmi.js"></script>
+
 </body>
+
 </html>
