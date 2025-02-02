@@ -20,7 +20,6 @@ section{
     overflow: hidden;
     object-fit: cover;
     z-index: -1;
-
 }
 
 section .wave{
@@ -72,7 +71,6 @@ section .wave.wave3{
     opacity: 0.2;
     animation-delay: -2s;
     bottom: 15px;
-
 }
 
 section .wave.wave4{
@@ -81,7 +79,6 @@ section .wave.wave4{
     opacity: 0.7;
     animation-delay: 0s;
     bottom: 20px;
-
 }
 
 .login{
