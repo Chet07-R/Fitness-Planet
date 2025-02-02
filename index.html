@@ -14,48 +14,60 @@
 
         <img src="image_transparent.png" alt="logo">
         <div class="navb">
-            <h4 class="navbar"><a href="">TopRacer</a></h4>
-            <h4 class="navbar"><a href="">Golf Lessons</a></h4>
-            <h4 class="navbar"><a href="">Adventure Golf</a></h4>
-            <h4 class="navbar"><a href="">Coffee Shop</a></h4>
+            <h4 class="navbar"><a href="#main">Home</a></h4>
+            <h4 class="navbar"><a href="">Program</a></h4>
+            <h4 class="navbar"><a href="">Choose Us</a></h4>
+            <h4 class="navbar"><a href="#bmi">BMI</a></h4>
             <h4 class="navbar"><a href="signin.html">Sign In</a></h4>
         </div>
     </div>
     <div id="cursor"></div>
     <div id="cursor-blur"></div>
-    <video autoplay loop muted src="a Cinematic Fitness VideoSONY.mp4"></video>
+    <video autoplay loop muted src="bg_video.mp4"></video>
     <div>
-        <header class="a">
+        <div id="main">
             <div class="page1">
                 <h1>STAY FOCUSED. STAY FIT.</h1>
                 <h5>WELCOME TO PLANET FITNESS FAMILY</h5>
             </div>
-        </header>
+            <div class="page2"></div>
 
-        <script src="script.js"></script>
+            <div id="bmi">
+                <h1>Calculate your BMI here:</h1>
+                <p class="line">The Body Mass Index (BMI) caculator calculates body mass index from your weight and
+                    height.</p>
+                <div>
+                    Height (in cm) : <input type="number" class="input" id="height"
+                        placeholder="Enter your Height in cm">
+                </div>
+                <div>
+                    Weight (in kg) : <input type="number" class="input" id="weight"
+                        placeholder="Enter your Weight in kg">
+                </div>
+                <button class="btn" id="btn">Calculate BMI</button>
+                <p>
+                    BMI =
+                    <input disabled type="text" class="input" id="bmi-result">
+                </p>
 
-
-        <div class="bmi">
-            <h1>Calculate your BMI here:</h1>
-            <p class="line">The Body Mass Index (BMI) caculator calculates body mass index from your weight and height.</p>
-            <div>
-                Height (in cm) : <input type="number" class="input" id="height" placeholder="Enter your Height in cm">
+                <h4 class="info-text">
+                    Weight Condition: <span id="weight-condition"></span>
+                </h4>
             </div>
-            <div>
-                Weight (in kg) : <input type="number" class="input" id="weight" placeholder="Enter your Weight in kg">
-            </div>
-            <button class="btn" id="btn">Calculate BMI</button>
-            <p>
-                BMI = 
-                <input disabled type="text" class="input" id="bmi-result">
-            </p>
-
-            <h4 class="info-text">
-                Weight Condition: <span id="weight-condition"></span>   
-            </h4>
         </div>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+            integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!--gsap cdn is a js library for scrolling animations-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+            integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script> <!-- plugin for gsap-->
+        <script src="script.js"></script>
+
         <script src="bmi.js"></script>
+
+        <!-- make sure to put gsap link before linking script.js-->
 
 </body>
 
