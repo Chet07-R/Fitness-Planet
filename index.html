@@ -33,26 +33,27 @@
             <div class="page2"></div>
 
             <div id="bmi">
-                <h1>Calculate your BMI here:</h1>
+                <h1 class="he">Calculate your BMI here:</h1>
                 <p class="line">The Body Mass Index (BMI) caculator calculates body mass index from your weight and
                     height.</p>
-                <div>
+                <div class="content">
                     Height (in cm) : <input type="number" class="input" id="height"
                         placeholder="Enter your Height in cm">
-                </div>
-                <div>
-                    Weight (in kg) : <input type="number" class="input" id="weight"
+                    <span class="weight">Weight (in kg) : <input type="number" class="input" id="weight"
                         placeholder="Enter your Weight in kg">
+                    </span>
+                    <!-- <img src="bmi.png" alt=""> -->
                 </div>
                 <button class="btn" id="btn">Calculate BMI</button>
-                <p>
-                    BMI =
-                    <input disabled type="text" class="input" id="bmi-result">
-                </p>
+                <div class="result">
+                        BMI =
+                        <input disabled type="text" class="input" id="bmi-result">  
+                    <span class="info-text">
+                            Weight Condition: <span id="weight-condition"></span>
+                    </span>
 
-                <h4 class="info-text">
-                    Weight Condition: <span id="weight-condition"></span>
-                </h4>
+                </div>
+
             </div>
         </div>
 
