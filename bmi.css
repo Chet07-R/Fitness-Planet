@@ -4,13 +4,13 @@
     display: flex;
     flex-direction: column;
     border-radius: 5px;
-    width: 500px;
+    width: 100%;
     height: 400px;
-    background-color: #ec7474;
+    background: transparent;
     padding: 30px;
 }
 
-input{
+.input{
     padding: 10px 20px;
     font-size: 18px;
     background: rgba(255, 255, 255, 0.3);
@@ -22,8 +22,8 @@ input:hover{
     background: rgba(255, 255, 255, 0.5);
 }
 .btn{
-    background-color: black;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 15px;
@@ -31,20 +31,40 @@ input:hover{
     cursor: pointer;
     width: 200px;
     height: 40px;
-    margin-left: 80px;
-    margin-top: 15px;
-}
+    margin-left: 380px;
+    margin-top: 30px;
+    margin-bottom: 10px;
 
-.info-text{
-    font-size: 15px;
-    left: 1000px;
 }
 
 .info-text{
     font-size: 23px;
+    left: 1000px;
+    font-weight: 600;
+    margin-left: 75px;
 }
+
 
 .line{
     padding: 10px;
     padding-left: 0;
+}
+
+.he{
+    justify-content: center;
+    align-items: center;
+    margin-left: 380px;
+    margin-bottom: 10px;
+    color: #ec7474;
+    font-size: 50px;
+    text-decoration: underline;
+}
+
+.weight{
+    margin-left: 70px;
+}
+
+
+.result{
+    margin-left: 57px;
 }
