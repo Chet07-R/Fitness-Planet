@@ -15,7 +15,7 @@
         <img src="image_transparent.png" alt="logo">
         <div class="navb">
             <h4 class="navbar"><a href="#main">Home</a></h4>
-            <h4 class="navbar"><a href="">Program</a></h4>
+            <h4 class="navbar"><a href="#program">Program</a></h4>
             <h4 class="navbar"><a href="about.html">About Us</a></h4>
             <h4 class="navbar"><a href="#bmi">BMI</a></h4>
             <h4 class="navbar"><a href="signin.html">Sign In</a></h4>
@@ -36,24 +36,22 @@
                 <h1 class="he">Calculate your BMI here:</h1>
                 <p class="line">The Body Mass Index (BMI) caculator calculates body mass index from your weight and
                     height.</p>
-                <div class="content">
+                <div class="cont">
                     Height (in cm) : <input type="number" class="input" id="height"
                         placeholder="Enter your Height in cm">
                     <span class="weight">Weight (in kg) : <input type="number" class="input" id="weight"
-                        placeholder="Enter your Weight in kg">
-                    </span>
+                            placeholder="Enter your Weight in kg"></span>
                     <!-- <img src="bmi.png" alt=""> -->
                 </div>
+
                 <button class="btn" id="btn">Calculate BMI</button>
                 <div class="result">
-                        BMI =
-                        <input disabled type="text" class="input" id="bmi-result">  
+                    BMI =
+                    <input disabled type="text" class="input" id="bmi-result">
                     <span class="info-text">
-                            Weight Condition: <span id="weight-condition"></span>
+                        Weight Condition: <span id="weight-condition"></span>
                     </span>
-
                 </div>
-
             </div>
         </div>
 
@@ -69,6 +67,81 @@
         <script src="bmi.js"></script>
 
         <!-- make sure to put gsap link before linking script.js-->
+
+
+        <!-- Program Starts Here -->
+
+        <div class="stack-area" id="program">
+            <div class="left">
+                <div class="title">Our Features</div>
+                <div class="sub-title">
+                    Our gym website boosts personalized fitness plans, tailored to individual goals, and an intuitive
+                    user interface for effortless navigation and workout tracking. Join us to discover your ideal
+                    fitness regime and achieve your health goals with ease!
+                    <br />
+                </div>
+            </div>
+            <div class="right">
+                <div class="card">
+                    <div class="sub">Personal Training</div>
+                    <div class="content">Personalized workouts guided by professional trainers.</div>
+                </div>
+                <div class="card">
+                    <div class="sub">Group Classes</div>
+                    <div class="content">Collective fitness sessions with guided instruction.</div>
+                </div>
+                <div class="card">
+                    <div class="sub">Nutrition Counseling</div>
+                    <div class="content">Expert dietary advice for healthy living.</div>
+                </div>
+                <div class="card">
+                    <div class="sub">Yoga</div>
+                    <div class="content">Mind-body practice for balance and flexibility.</div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let cards = document.querySelectorAll(".card");
+
+            let stackArea = document.querySelector(".stack-area");
+
+            function rotateCards() {
+                let angle = 0;
+                cards.forEach((card, index) => {
+                    if (card.classList.contains("away")) {
+                        card.style.transform = `translateY(-120vh) rotate(-48deg)`;
+                    } else {
+                        card.style.transform = ` rotate(${angle}deg)`;
+                        angle = angle - 10;
+                        card.style.zIndex = cards.length - index;
+                    }
+                });
+            }
+
+            rotateCards();
+
+            window.addEventListener("scroll", () => {
+                let distance = window.innerHeight * 0.5;
+
+                let topVal = stackArea.getBoundingClientRect().top;
+
+                let index = -1 * (topVal / distance + 1);
+
+                index = Math.floor(index);
+
+                for (i = 0; i < cards.length; i++) {
+                    if (i <= index) {
+                        cards[i].classList.add("away");
+                    } else {
+                        cards[i].classList.remove("away");
+                    }
+                }
+                rotateCards();
+            });
+        </script>
+
+        <!-- Program ends here -->
 
 </body>
 
