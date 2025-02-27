@@ -32,37 +32,42 @@
                 <h1>STAY FOCUSED. STAY FIT.</h1>
                 <h5>WELCOME TO PLANET FITNESS FAMILY</h5>
             </div>
-            <div class="page2"></div>
+            <div class="bmi-page">
+                <header class="header">
+                    <h1>BMI Calculator</h1>
+                    <p>Track Your Fitness Journey</p>
+                </header>
 
-
-            <div id="bmi">
-                <h1 class="he">Calculate your BMI here:</h1>
-                <p class="line">The Body Mass Index (BMI) calculator calculates body mass index from your weight and
-                    height.</p>
-                <div class="cont">
-                    <div class="height">Height (in cm) : <input type="number" class="input" id="height" placeholder="Enter your Height in cm"></div>
-                    <span class="weight">Weight (in kg) : <input type="number" class="input" id="weight" placeholder="Enter your Weight in kg"></span>
-                    <img src="bmi.png" alt="BMI Image" class="bmi-image">
-                </div>
-
-                
-                <button class="animated-button">
-                    <span>Calculate BMI</span>
-                
-                </button>
-                    BMI =
-                    <input disabled type="text" class="input" id="bmi-result">
-                    <span class="info-text">
-                        Weight Condition: <span id="weight-condition"></span>
-                    </span>
+                <section class="bmi-container">
+                    <div class="bmi-form">
+                        <h2>Enter Your Details</h2>
+                        <p class="description">Provide your height and weight below</p>
+                        <div class="input-group">
+                            <div class="input-field">
+                                <label for="height">Height (cm)</label>
+                                <input type="number" id="height" placeholder="e.g., 170">
+                            </div>
+                            <div class="input-field">
+                                <label for="weight">Weight (kg)</label>
+                                <input type="number" id="weight" placeholder="e.g., 70">
+                            </div>
+                        </div>
+                        <button class="calculate-btn">Calculate BMI</button>
+                        <div class="result">
+                            <span>Your BMI:</span>
+                            <div id="bmi-result"></div>
+                            <span class="condition">Condition: <span id="weight-condition"></span></span>
+                        </div>
                     </div>
+
+
+                    <div class="bmi-visual">
+                        <img src="bmi-chart.png" alt="BMI Chart" class="bmi-image">
+                    </div>
+                </section>
+
             </div>
-        </div> 
-
-        
-
-        <!-- make sure to put gsap link before linking script.js -->
-
+        </div>
 
         <!-- Program Starts Here -->
 
@@ -137,6 +142,8 @@
         </script>
 
         <!-- Program ends here -->
+
+        <!-- make sure to put gsap link before linking script.js -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
             integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="

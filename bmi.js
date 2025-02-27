@@ -1,28 +1,33 @@
-
-const btnE1 = document.getElementById('btn');
-const bmiinputE1 = document.getElementById("bmi-result");
-const weightconditionE1 = document.getElementById("weight-condition");
+// Select elements using the IDs and classes from your CSS
+const btnEl = document.querySelector('.calculate-btn'); // Matches your CSS class
+const bmiInputEl = document.getElementById('bmi-result'); // Matches your CSS ID
+const weightConditionEl = document.getElementById('weight-condition'); // Matches your CSS ID
 
 function calculateBMI() {
-    const heightValue = document.getElementById("height").value;
-    const weightValue = document.getElementById("weight").value;
+    // Get height and weight values from input fields
+    const heightValue = document.getElementById('height').value;
+    const weightValue = document.getElementById('weight').value;
 
+    // Convert height from cm to meters
     const heightInMeters = heightValue / 100;
 
+    // Calculate BMI
     const bmiValue = weightValue / (heightInMeters * heightInMeters);
 
-    bmiinputE1.value = bmiValue.toFixed(2);
+    // Display BMI in the result div (using textContent since it's not an input)
+    bmiInputEl.textContent = bmiValue.toFixed(2);
 
+    // Update weight condition based on BMI
     if (bmiValue < 18.5) {
-        weightconditionE1.innerText = "Underweight";
+        weightConditionEl.textContent = 'Underweight';
     } else if (bmiValue >= 18.5 && bmiValue <= 24.9) {
-        weightconditionE1.innerText = "Normal weight";
+        weightConditionEl.textContent = 'Normal weight';
     } else if (bmiValue >= 25 && bmiValue <= 29.9) {
-        weightconditionE1.innerText = "Overweight";
+        weightConditionEl.textContent = 'Overweight';
     } else if (bmiValue >= 30) {
-        weightconditionE1.innerText = "Obesity";
+        weightConditionEl.textContent = 'Obesity';
     }
 }
 
-
-btnE1.addEventListener("click", calculateBMI);
+// Add click event listener to the calculate button
+btnEl.addEventListener('click', calculateBMI);

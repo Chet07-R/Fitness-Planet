@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "montserrat";
-    color: #fff;
 }
 
 html,
@@ -125,6 +124,7 @@ video {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    color:#fff;
     /* position: fixed; */
 }
 
@@ -176,9 +176,13 @@ video {
     animation: outlineAnimation 5s infinite ease-in-out;
 }
 
-.page2{
-    height:100vh;
-    width:100%;
+.page2 {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f6fa, #e9ecef);
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
