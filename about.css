@@ -1,5 +1,5 @@
   :root {
-    --primary: #4CAF50;
+    --primary: #ec7474;
     --secondary: #2C3E50;
     --light: #f8f9fa;
     --dark: #1a1a1a;
@@ -309,7 +309,8 @@ html.dark .stats {
 }
 
 .btn:hover {
-    background-color: #3d8b40;
+    background-color: #f03838;
+    color: #111;
     transform: translateY(-3px);
 }
 
