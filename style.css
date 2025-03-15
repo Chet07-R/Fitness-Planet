@@ -176,10 +176,119 @@ video {
     animation: outlineAnimation 5s infinite ease-in-out;
 }
 
+/* page 2 */
+#bmi-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures it takes full viewport height */
+    background-color: black; 
+}
 
+#calculator {
+    display: flex;
+    background: white;
+    opacity: 0.9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
+#inputs {
+    width: 50%;
+    padding-right: 20px;
+}
 
-/* Program Starts here */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+#result {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.2em;
+}
+
+#gauge {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gauge-container {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+}
+
+#gauge-container img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#needle {
+    width: 4px;
+    height: 50px;
+    background: red;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: rotate(15deg);
+    transition: transform 1s;
+}
+
+@media (max-width: 768px) {
+    #calculator {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #inputs, #gauge {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* css for page 3 */
 
 
 body {
@@ -303,107 +412,3 @@ body {
 .away {
     transform-origin: bottom left;
 }
-
-/* page 2 */
-
-#calculator {
-    display: flex;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  #inputs {
-    width: 50%;
-    padding-right: 20px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  button:hover {
-    background: #2980b9;
-  }
-  
-  #result {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 1.2em;
-  }
-  
-  #gauge {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #gauge-container {
-    position: relative;
-    width: 200px;
-    height: 100px;
-    overflow: hidden;
-  }
-  
-  #gauge-container img {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  #needle {
-    width: 4px;
-    height: 50px;
-    background: red;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform-origin: bottom center;
-    transform: rotate(15deg);
-    transition: transform 1s;
-  }
-  
-  @media (max-width: 768px) {
-    #calculator {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    #inputs, #gauge {
-      width: 100%;
-      padding: 10px;
-    }
-  }

@@ -1,4 +1,4 @@
-// Add this script to your HTML file
+
 document.addEventListener('DOMContentLoaded', function() {
   // Create dark mode toggle button
   const button = document.createElement('button');
