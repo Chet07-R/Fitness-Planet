@@ -59,7 +59,7 @@
     justify-content: flex-start;
     padding: 0 50px;
     position: fixed;
-    gap: 450px;
+    gap: 350px;
     top: 0; /* Ensure it stays at the top */
     left: 0;
     z-index: 1000; /* Ensures it is above everything */
