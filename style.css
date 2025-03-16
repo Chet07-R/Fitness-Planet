@@ -48,8 +48,9 @@ body {
 .navb {
     position: relative;
     display: flex;
-    align-items: center;
-    margin-left: 15px;
+    align-items: flex-end;
+    margin-left: 200px;
+    padding-right: 0%;
 }
 
 #nav img {
