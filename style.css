@@ -39,7 +39,7 @@ body {
     justify-content: flex-start;
     padding: 0 50px;
     position: fixed;
-    gap: 450px;
+    gap:250px;
     top: 0; /* Ensure it stays at the top */
     left: 0;
     z-index: 1000; /* Ensures it is above everything */
@@ -48,8 +48,9 @@ body {
 .navb {
     position: relative;
     display: flex;
-    align-items: center;
-    margin-left: 15px;
+    align-items: flex-end;
+    margin-left: 200px;
+    padding-right: 0%;
 }
 
 #nav img {

@@ -1,4 +1,4 @@
-  :root {
+:root {
     --primary: #ec7474;
     --secondary: #2C3E50;
     --light: #f8f9fa;
@@ -10,13 +10,13 @@
     --team-name-color: var(--secondary);
     --team-bio-color: #666;
     --header-gradient: linear-gradient(135deg, rgba(76, 175, 80, 0.9) 0%, rgba(33, 150, 243, 0.6) 100%);
-}
-
-html {
+  }
+  
+  html {
     transition: all 0.5s ease-in;
-}
-
-html.dark {
+  }
+  
+  html.dark {
     --primary-color: #fff;
     --secondary-color: #333;
     --text-color: var(--light);
@@ -25,43 +25,182 @@ html.dark {
     --team-name-color: var(--light);
     --team-bio-color: #ccc;
     --header-gradient: linear-gradient(135deg, rgba(76, 175, 80, 0.6) 0%, rgba(33, 150, 243, 0.4) 100%);
-}
-
-html.dark {
+  }
+  
+  html.dark {
     background-color: #111;
     color: var(--primary-color);
-}
-
-* {
+  }
+  
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
+    font-family: "montserrat";
+  }
+  
+  body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
     transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-.container {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #nav {
+    font-family: "montserrat";
+    height: 100px;
+    width: 100%;
+    background-color: hsla(0, 0%, 0%, 0);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#4A4112", endColorstr="#FBE9D7", GradientType=1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 50px;
+    position: fixed;
+    gap: 350px;
+    top: 0; /* Ensure it stays at the top */
+    left: 0;
+    z-index: 1000; /* Ensures it is above everything */
+  }
+  
+  .navb {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 200px;
+    padding-right: 0%;
+  }
+  
+  #nav img {
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 10px;
+  }
+  
+  #nav h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  .navbar a {
+    position: relative;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    transition: all 0.9s;
+    margin-right: 50px;
+  }
+  
+  .navbar a:hover {
+    color: #f6f0f099;
+  }
+  
+  .navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: 0.9s;
+  }
+  
+  .navbar a:hover::before {
+    width: 100%;
+    background-color: #cdc7c7b1;
+  }
+  
+  #cards-container {
+    background-color:black white;
+    height: 60vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+    padding: 4px;
+  }
+  
+  .card {
+    height: 80%;
+    width: 28%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  
+  #card1 {
+    background-image: url('pictures/Chetan.jpg');
+  }
+  
+  #card2 {
+    background-image: url('pictures/Tanish.png');
+  }
+  
+  #card3 {
+    background-image: url('pictures/Vansh.png');
+  }
+  
+  .overlay {
+    height: 100%;
+    width: 100%;
+    background: var(--header-gradient) ;
+    padding: 30px;
+    padding-top: 160px;
+    opacity: 0;
+    transition: all ease 0.6s;
+  }
+  
+  .overlay h4 {
+    color: black white;
+    font-size: 40px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+  
+  .overlay p {
+    color: black white;
+    font-size: 18px;
+  }
+  
+  .card:hover .overlay {
+    opacity: 10;
+    background: var(--header-gradient);
+  }
+  
+  .card:hover {
+    transform: rotate3d(-1, 1, 0, 20deg);
+  }
+  
+  .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-}
-
-header {
+  }
+  
+  header {
     text-align: center;
     padding: 80px 20px;
     background-color: var(--primary);
     color: white;
     position: relative;
     overflow: hidden;
-}
-
-header::before {
+  }
+  
+  header::before {
     content: "";
     position: absolute;
     top: 0;
@@ -71,129 +210,63 @@ header::before {
     background: var(--header-gradient);
     z-index: 1;
     transition: background 0.5s ease;
-}
-
-.header-content {
+  }
+  
+  .header-content {
     position: relative;
     z-index: 2;
-}
-
-h1 {
+  }
+  
+  h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
     font-weight: 700;
-}
-
-.subtitle {
+  }
+  
+  .subtitle {
     font-size: 1.5rem;
     margin-bottom: 30px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.mission {
+  }
+  
+  .mission {
     padding: 80px 20px;
     text-align: center;
     background-color: var(--card-bg);
     transition: background-color 0.5s ease;
-}
-
-.mission h2 {
+  }
+  
+  .mission h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
     color: var(--team-name-color);
     transition: color 0.5s ease;
-}
-
-.mission-text {
+  }
+  
+  .mission-text {
     max-width: 800px;
     margin: 0 auto;
     font-size: 1.2rem;
     margin-bottom: 40px;
     color: var(--text-color);
     transition: color 0.5s ease;
-}
-
-.team {
-    padding: 80px 20px;
-    background-color: var(--bg-color);
-    transition: background-color 0.5s ease;
-}
-
-.team h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 50px;
-    color: var(--team-name-color);
-    transition: color 0.5s ease;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.team-member {
-    background-color: var(--card-bg);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
-}
-
-.team-member:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.team-img-container {
-    height: 250px;
-    overflow: hidden;
-}
-
-.team-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.team-member:hover .team-img {
-    transform: scale(1.05);
-}
-
-.team-info {
-    padding: 25px;
-}
-
-.team-name {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    color: var(--team-name-color);
-    transition: color 0.5s ease;
-}
-
-.team-role {
+  }
+  
+  .team-role {
     color: var(--primary);
     font-weight: 600;
     margin-bottom: 15px;
     display: block;
-}
-
-.team-bio {
-    color: var(--team-bio-color);
-    margin-bottom: 20px;
-    transition: color 0.5s ease;
-}
-
-.social-links {
+  }
+  
+  .social-links {
     display: flex;
     gap: 10px;
-}
-
-.social-icons a {
+  }
+  
+  .social-icons a {
     display: flex;
     justify-content: center;
     display: inline-flex;
@@ -204,99 +277,107 @@ h1 {
     text-decoration: none;
     margin: 0 8px;
     transition: border-color 0.5s ease;
-}
-
-html.dark .social-icons a {
+  }
+  
+  html.dark .social-icons a {
     border-color: #444;
-}
-
-.social-icons .bxl-google {
+  }
+  
+  .social-icons .bxl-google {
     color: rgb(211, 73, 73);
-}
-
-.social-icons .bxl-google:hover {
-    color: green;
-}
-
-.social-icons .bxl-twitter {
+  }
+  
+  .social-icons .bxl-google:hover {
+    color: yellow;
+  }
+  
+  .social-icons .bxl-twitter {
     color: lightskyblue;
-}
-
-.social-icons .bxl-twitter:hover {
+  }
+  
+  .social-icons .bxl-twitter:hover {
     color: rgb(17, 17, 17);
-}
-
-.social-icons .bxl-google:hover {
-    color: green;
-}
-
-.social-icons .bxl-github {
+  }
+  
+  .social-icons .bxl-google:hover {
+    color: yellow;
+  }
+  
+  .social-icons .bxl-github {
     color: rgb(5, 5, 5);
-}
+  }
 
-html.dark .social-icons .bxl-github {
+  .social-icons .bxl-github:hover {
+    color: rgb(249, 246, 246);
+  }
+  
+  html.dark .social-icons .bxl-github {
     color: #f5f5f5;
-}
+  }
 
-.social-icons .bxl-linkedin {
+  html.dark .social-icons .bxl-github :hover{
+    color: #060505;
+  }
+
+  .social-icons .bxl-linkedin {
     color: rgb(45, 76, 232);
-}
-
-.social-icons .bxl-linkedin:hover {
+  }
+  
+  .social-icons .bxl-linkedin:hover {
     color: lightskyblue;
-}
-
-.stats {
+  }
+  
+  .stats {
     padding: 80px 20px;
     background-color: var(--secondary);
     color: white;
     transition: background-color 0.5s ease;
-}
-
-html.dark .stats {
+  }
+  
+  html.dark .stats {
     background-color: #222;
-}
-
-.stats-grid {
+  }
+  
+  .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     text-align: center;
-}
-
-.stat-item h3 {
+  }
+  
+  .stat-item h3 {
     font-size: 3rem;
     margin-bottom: 10px;
     color: var(--primary);
-}
-
-.stat-item p {
+  }
+  
+  .stat-item p {
     font-size: 1.2rem;
-}
-
-.cta {
+  }
+  
+  .cta {
     padding: 80px 20px;
     text-align: center;
     background-color: var(--bg-color);
     transition: background-color 0.5s ease;
-}
-
-.cta h2 {
+  }
+  
+  .cta h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: var(--team-name-color);
     transition: color 0.5s ease;
-}
-
-.cta p {
+  }
+  
+  .cta p {
     max-width: 700px;
     margin: 0 auto 30px;
     font-size: 1.2rem;
     color: var(--text-color);
     transition: color 0.5s ease;
-}
-
-.btn {
+  }
+  
+  .btn {
     display: inline-block;
     padding: 15px 30px;
     background-color: var(--primary);
@@ -306,16 +387,16 @@ html.dark .stats {
     font-weight: 600;
     font-size: 1.1rem;
     transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #f03838;
+  }
+  
+  .btn:hover {
+    background-color: #f45c5c;
     color: #111;
     transform: translateY(-3px);
-}
-
-/* Dark mode toggle button - add this to your HTML */
-.dark-mode-toggle {
+  }
+  
+  /* Dark mode toggle button - add this to your HTML */
+  .dark-mode-toggle {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -333,18 +414,22 @@ html.dark .stats {
     font-size: 24px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-@media (max-width: 768px) {
+  }
+  
+  @media (max-width: 768px) {
     h1 {
         font-size: 2.5rem;
     }
     
-    .team-grid {
+    h4{
+        font-size:2.5rem;
+    }
+  
+    .card {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     
-    .stats-grid {
+    .card {
         grid-template-columns: repeat(2, 1fr);
     }
-}
+  }
