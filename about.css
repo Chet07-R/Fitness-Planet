@@ -135,7 +135,7 @@
     border-radius: 20px;
     background-size: cover;
     background-position: center;
-    overflow: hidden;
+    overflow: visible;
     transition: all ease 0.6s;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
@@ -151,17 +151,23 @@
   #card3 {
     background-image: url('pictures/Vansh.png');
   }
+
   
   .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
-    background: var(--header-gradient) ;
-    padding: 30px;
-    padding-top: 160px;
+    background: var(--header-gradient);
+    padding: 20px;
     opacity: 0;
-    transition: all ease 0.6s;
-  }
-  
+    transition: opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
   .overlay h4 {
     color: black white;
     font-size: 40px;
