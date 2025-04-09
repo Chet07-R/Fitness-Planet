@@ -32,6 +32,43 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
   
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".counter");
+    
+    const animateCounter = (counter) => {
+        const target = +counter.getAttribute("data-target");
+        const duration = 2000; // 2 seconds animation
+        const start = 0;
+        const increment = target / (duration / 16); // 60 FPS
+        
+        let current = start;
+        
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                counter.innerText = Math.ceil(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        
+        updateCounter();
+    };
+
+    // Only animate when element is in viewport
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
+});
+
   // Dark mode functionality
   // Create dark mode toggle button
   const button = document.createElement('button');
