@@ -118,7 +118,7 @@
   }
   
   #cards-container {
-    background-color:black white;
+    background-color:black;
     height: 60vh;
     display: flex;
     justify-content: space-evenly;
@@ -141,7 +141,7 @@
   }
   
   #card1 {
-    background-image: url('pictures/Chetan.jpg');
+    background-image: url('pictures/Chetan.png');
   }
   
   #card2 {
@@ -312,19 +312,19 @@
 
   .social-icons .bxl-github {
     color: rgb(5, 5, 5);
-}
+  }
 
-.social-icons .bxl-github:hover {
+  .social-icons .bxl-github:hover {
     color: rgb(249, 246, 246);
-}
+  }
 
-.social-icons .bxl-github {
+  .social-icons .bxl-github {
     color: #f5f5f5;
-}
+  }
 
-.social-icons .bxl-github:hover {
+  .social-icons .bxl-github:hover {
     color: #060505;
-}
+  }
   .social-icons .bxl-linkedin {
     color: rgb(45, 76, 232);
   }
