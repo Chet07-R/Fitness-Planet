@@ -26,7 +26,7 @@ function initializeChatbot() {
 
     // Chatbot functionality (rest of the code remains the same)
     let userMessage = '';
-    const Api_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCacQmAMhupE1_VrLNnhsB-APf48WDmzDM";
+    
 
     function createChatBox(html, className) {
       const div = document.createElement('div');
