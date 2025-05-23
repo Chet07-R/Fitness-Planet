@@ -29,42 +29,6 @@ body {
     z-index: 99;
 }
 
-#nav {
-    height: 100px;
-    width: 100%;
-    background-color: hsla(0, 0%, 0%, 0);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#4A4112", endColorstr="#FBE9D7", GradientType=1);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 50px;
-    position: fixed;
-    gap:250px;
-    top: 0; /* Ensure it stays at the top */
-    left: 0;
-    z-index: 1000; /* Ensures it is above everything */
-}
-
-.navb {
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    margin-left: 200px;
-    padding-right: 0%;
-}
-
-#nav img {
-    height: 150px;
-    width: 150px;
-    border-radius: 10px;
-    padding: 25px;
-    margin: 10px;
-}
-
-#nav h4 {
-    text-transform: uppercase;
-    font-weight: 500;
-}
 
 video {
     height: 100%;
@@ -74,36 +38,6 @@ video {
     -webkit-filter: blur(4px);
 }
 
-.navbar a {
-    position: relative;
-    font-size: 15px;
-    color: #fff;
-    font-weight: 500;
-    text-decoration: none;
-    margin-left: 40px;
-    transition: all 0.9s;
-    margin-right: 50px;
-}
-
-.navbar a:hover {
-    color: #f6f0f099;
-}
-
-.navbar a::before {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #fff;
-    transition: 0.9s;
-}
-
-.navbar a:hover::before {
-    width: 100%;
-    background-color: #cdc7c7b1;
-}
 
 video {
     height: 100%;
@@ -119,7 +53,7 @@ video {
 }
 
 .page1 {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -177,41 +111,15 @@ video {
     animation: outlineAnimation 5s infinite ease-in-out;
 }
 
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.39);
+  }
+
 .main main{
     width:100%;
     height:calc(100% - 280px);
     position:relative;
-}
-.chatbox{
-    position:absolute;
-    width:17%;
-    height:50%;
-    bottom:5%;
-    right:2%;
-    background-color: rgba(240,248,255,0.457);
-    border-radius:20px;
-    backdrop-filter:blur(5px);
-    padding:20px;
-}
-.chat-container{
-    width:100%;
-    height:70%;
-    overflow:auto;
-}
-.input-area{
-    width:120%;
-    height:60%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
-}
-
-.arrow{
-    width: 20%;
-    margin-right: 30px;
-    margin-bottom: 21px;
-    height: 40px;
 }
 
 /* page 2 */
@@ -220,7 +128,7 @@ video {
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Ensures it takes full viewport height */
-    background-color: black; 
+
 }
 
 #calculator {
@@ -449,4 +357,62 @@ body {
 
 .away {
     transform-origin: bottom left;
+}
+
+
+
+@media (max-width: 768px) {
+    .page1 h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .page1 h5 {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .stack-area {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left, .right {
+        position: static;
+        height: auto;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .card {
+        position: static;
+        margin: 20px auto;
+    }
+
+    .title {
+        font-size: 40px;
+        line-height: 50px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .sub-title {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #gauge-container {
+        width: 150px;
+        height: 75px;
+    }
+
+    #needle {
+        height: 40px;
+    }
 }
