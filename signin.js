@@ -11,10 +11,6 @@ loginBtn.addEventListener('click', () => {
 })
 
 
-
-
-
-
 //Email.js
 
 document.addEventListener("DOMContentLoaded", function() {
