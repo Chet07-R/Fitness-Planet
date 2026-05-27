@@ -1,0 +1,26 @@
+{
+  "name": "fitness-planet",
+  "version": "1.0.0",
+  "description": "Hello to the person sitting at the other end! 👋",
+  "main": "about.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chet07-R/Fitness-Planet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Chet07-R/Fitness-Planet/issues"
+  },
+  "homepage": "https://github.com/Chet07-R/Fitness-Planet#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.9"
+  }
+}

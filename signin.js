@@ -6,36 +6,51 @@ registerBtn.addEventListener('click', () => {
     container.classList.add('active');
 })
 
+// Submit form via Node.js Backend (SMTP)
+document.addEventListener("DOMContentLoaded", function() {
+    // Attempt to attach the event listener to the form
+    const form = document.getElementById("email-form");
+    if (form) {
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Use the correct IDs according to your HTML
+            const emailInput = document.getElementById("user_email") ? document.getElementById("user_email").value.trim() : (document.getElementById("email") ? document.getElementById("email").value.trim() : "");
+            const nameInput = document.getElementById("name") ? document.getElementById("name").value.trim() : "User";
+
+            if (!emailInput || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // Send data to your Node.js backend
+            fetch('http://localhost:3000/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    user_name: nameInput,
+                    to_email: emailInput
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Registered Successfully");
+                    console.log('Email sent via SMTP server!');
+                } else {
+                    alert("Failed to send email.");
+                    console.error('Failed to send email.');
+                }
+            })
+            .catch(error => {
+                alert("Error connecting to the server.");
+                console.error('Error:', error);
+            });
+        });
+    }
+});
+
 loginBtn.addEventListener('click', () => {
     container.classList.remove('active');
 })
-
-
-//Email.js
-
-document.addEventListener("DOMContentLoaded", function() {
-    emailjs.init("gIrCWJ5ulBJkBv1US");                                                    //public key
-
-    document.getElementById("email-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const emailInput = document.getElementById("user_email").value.trim();
-
-      if (!emailInput || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput)) {
-        alert("Please enter a valid email address.");
-        return;
-      }
-
-      emailjs.send("service_9r8tnnq", "template_cbs1olo", {
-        user_email: emailInput
-      })
-      .then(response => {
-        alert("Registered Succesfully");
-        console.log("Success:", response.status, response.text);
-      })
-      .catch(error => {
-        alert("Failed to send the auto-reply email.");
-        console.error("EmailJS Error:", error);
-      });
-    });
-  });
