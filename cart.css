@@ -13,7 +13,6 @@ body {
     padding: 100px; /* Add padding around the content */
     animation: gradientBG 15s ease infinite; /* Apply animated gradient background */
 }
-
 /* Define the animation for the background gradient movement */
 @keyframes gradientBG {
     0% { background-position: 0% 50%; } /* Start position of gradient */
