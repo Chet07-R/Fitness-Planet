@@ -6,3 +6,5 @@
 
 # Ignore node_modules (for JavaScript projects)
 node_modules/  
+
+server.js
