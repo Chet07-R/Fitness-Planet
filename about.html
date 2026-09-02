@@ -10,9 +10,9 @@
   <title> Fitness Planet - About Us</title>
   
   <!-- Link to external CSS files for styling different parts of the page -->
-  <link rel="stylesheet" href="about.css"> <!-- Styles specific to the About page -->
-  <link rel="stylesheet" href="navbar.css"> <!-- Styles for the navigation bar -->
-  <link rel="stylesheet" href="footer.css"> <!-- Styles for the footer section -->
+  <link rel="stylesheet" href="css/about.css"> <!-- Styles specific to the About page -->
+  <link rel="stylesheet" href="css/navbar.css"> <!-- Styles for the navigation bar -->
+  <link rel="stylesheet" href="css/footer.css"> <!-- Styles for the footer section -->
   
   <!-- Define the favicon (icon displayed in the browser tab) -->
   <link rel="icon" href="pictures/Fitness.png" type="image/x-icon">
@@ -22,13 +22,10 @@
 </head>
 <body>
   <!-- Placeholder div where the navigation bar will be dynamically inserted -->
-  <div id="nav"></div>
+  <div id="navbar"></div>
   
   <!-- Header section to introduce the page content -->
   <header>
-    <!-- Load JavaScript for dark mode functionality specific to this page -->
-    <script src="dark_about.js"></script>
-    
     <!-- Container for header text content -->
     <div class="header-content">
       <!-- Main heading for the About page -->
@@ -202,9 +199,6 @@
     </div>
   </section>
 
-  <!-- Placeholder div for navigation bar (possibly used for sticky or bottom navigation) -->
-  <div id="navbar"></div>
-  
   <!-- Placeholder div where the footer will be dynamically inserted -->
   <div id="footer"></div>
   
@@ -231,6 +225,12 @@
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar').innerHTML = data;
+        if (typeof initializeChatbot === 'function') {
+          initializeChatbot();
+        }
+        if (typeof highlightActiveNavLink === 'function') {
+          highlightActiveNavLink();
+        }
       });
   </script>
 
@@ -251,8 +251,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- Custom JavaScript files for page-specific functionality -->
-  <script src="about.js"></script> <!-- Handles animations and logic for the About page -->
-  <script src="chatbot.js"></script> <!-- Manages the chatbot functionality -->
-  <script src="navbar.js"></script> <!-- Controls navigation bar behavior -->
+  <script src="js/about.js"></script> <!-- Handles animations and logic for the About page -->
+  <script src="js/chatbot.js"></script> <!-- Manages the chatbot functionality -->
+  <script src="js/navbar.js"></script> <!-- Controls navigation bar behavior -->
 </body>
 </html>
