@@ -1,75 +1,97 @@
-gsap.to("#nav", {
-  backgroundColor: "#000",  // we can access any css property here but we use Camel case here that is instead of - use a capital letter
-  height: "90px",
-  duration: 0.5,
-  scrollTrigger: {
-      trigger: "#nav",
-      scroller: "body",
-      // markers:true,
-      start: "top -10%",
-      end: "top -11%",
-      scrub: 1 // for this it will repeat when we scroll otherwise it won't
+// GSAP Navbar & Background scroll effects
+if (typeof gsap !== 'undefined') {
+    gsap.to("#nav", {
+        backgroundColor: "#000000",
+        height: "70px",
+        duration: 0.4,
+        scrollTrigger: {
+            trigger: "body",
+            scroller: "body",
+            start: "top -50px",
+            end: "top -100px",
+            scrub: 1
+        }
+    });
 
-
-  }
-
-})
-
-gsap.to("#main", {
-  backgroundColor: "#000",
-  scrollTrigger: {
-    trigger: "#main",
-    scroller: "body",
-    // markers: true,
-    start: "top -25%",
-    end: "top -70%",
-    scrub: 2,
-  },
-});
-
-// page 2 
-
-function calculateBMI() {
-    let height = parseFloat(document.getElementById("height").value) / 100;
-    let weight = parseFloat(document.getElementById("weight").value);
-    
-    // Check if inputs are valid
-    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
-        document.getElementById("bmi-value").innerText = "Error";
-        document.getElementById("condition").innerText = "Invalid input";
-        return;
-    }
-    
-    let bmi = (weight / (height * height)).toFixed(1);
-    document.getElementById("bmi-value").innerText = bmi;
-    
-    let needle = document.getElementById("needle");
-    let condition = "";
-    let angle = 0;
-    
-    if (bmi < 18.5) {
-        condition = "Underweight";
-        angle = -80;
-    } else if (bmi < 25) {
-        condition = "Normal";
-        angle = -45;
-    } else if (bmi < 30) {
-        condition = "Overweight";
-        angle = 0;
-    } else if (bmi < 40) {
-        condition = "Obese";
-        angle = 35;
-    } else {
-        condition = "Severely Obese";
-        angle = 80;
-    }
-    
-    document.getElementById("condition").innerText = condition;
-    needle.style.transform = `rotate(${angle}deg)`;
+    gsap.to("#main", {
+        backgroundColor: "#000000",
+        scrollTrigger: {
+            trigger: "#main",
+            scroller: "body",
+            start: "top -30%",
+            end: "top -80%",
+            scrub: 2
+        }
+    });
 }
 
-// Add event listener to the button
-document.getElementById("calculate-btn").addEventListener("click", calculateBMI);
+// Interactive BMI Calculator
+function calculateBMI() {
+    const heightInput = document.getElementById("height");
+    const weightInput = document.getElementById("weight");
+    const bmiValEl = document.getElementById("bmi-value");
+    const condEl = document.getElementById("condition");
+    const needle = document.getElementById("needle");
+
+    if (!heightInput || !weightInput) return;
+
+    let height = parseFloat(heightInput.value) / 100;
+    let weight = parseFloat(weightInput.value);
+
+    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+        if (bmiValEl) bmiValEl.innerText = "--";
+        if (condEl) {
+            condEl.innerText = "Invalid Input";
+            condEl.style.color = "#ef4444";
+        }
+        return;
+    }
+
+    let bmi = parseFloat((weight / (height * height)).toFixed(1));
+    if (bmiValEl) bmiValEl.innerText = bmi;
+
+    let condition = "";
+    let angle = -90;
+    let color = "#10b981";
+
+    if (bmi < 18.5) {
+        condition = "Underweight";
+        // Map 10-18.5 to angle -80 to -45
+        angle = -80 + ((bmi - 10) / 8.5) * 35;
+        if (angle < -85) angle = -85;
+        color = "#3b82f6";
+    } else if (bmi < 25) {
+        condition = "Normal";
+        // Map 18.5-25 to angle -40 to 0
+        angle = -40 + ((bmi - 18.5) / 6.5) * 40;
+        color = "#10b981";
+    } else if (bmi < 30) {
+        condition = "Overweight";
+        // Map 25-30 to angle 5 to 45
+        angle = 5 + ((bmi - 25) / 5) * 40;
+        color = "#f59e0b";
+    } else {
+        condition = "Obese";
+        // Map 30-40+ to angle 50 to 85
+        angle = 50 + Math.min((bmi - 30) / 10, 1) * 35;
+        color = "#ef4444";
+    }
+
+    if (condEl) {
+        condEl.innerText = condition;
+        condEl.style.color = color;
+    }
+
+    if (needle) {
+        needle.style.transform = `translateX(-50%) rotate(${angle}deg)`;
+    }
+}
+
+// Add event listener to calculate button
+const calcBtn = document.getElementById("calculate-btn");
+if (calcBtn) {
+    calcBtn.addEventListener("click", calculateBMI);
+}
 
 // cards animation that we have used
 
