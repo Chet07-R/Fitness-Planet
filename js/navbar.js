@@ -81,11 +81,48 @@ function highlightActiveNavLink() {
     });
 }
 
-// Global hook for navbar fetch callbacks
+// Mobile Menu Toggle Functionality
+function setupMobileMenu() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (menuToggle && navMenu && !menuToggle.dataset.bound) {
+        menuToggle.dataset.bound = "true";
+
+        menuToggle.onclick = function(e) {
+            e.stopPropagation();
+            menuToggle.classList.toggle('open');
+            navMenu.classList.toggle('show');
+        };
+
+        // Close menu when clicking any nav link
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('open');
+                navMenu.classList.remove('show');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('open');
+                navMenu.classList.remove('show');
+            }
+        });
+    }
+}
+
+// Global hooks for navbar fetch callbacks
 window.highlightActiveNavLink = highlightActiveNavLink;
+window.setupMobileMenu = setupMobileMenu;
 
 // Event listeners for seamless scroll-spy, hash change, and ready
-document.addEventListener('DOMContentLoaded', highlightActiveNavLink);
+document.addEventListener('DOMContentLoaded', () => {
+    highlightActiveNavLink();
+    setupMobileMenu();
+});
 window.addEventListener('scroll', highlightActiveNavLink, { passive: true });
 window.addEventListener('hashchange', highlightActiveNavLink);
 
@@ -93,6 +130,7 @@ window.addEventListener('hashchange', highlightActiveNavLink);
 let checkCount = 0;
 const intervalId = setInterval(() => {
     highlightActiveNavLink();
+    setupMobileMenu();
     checkCount++;
     if (checkCount > 10) clearInterval(intervalId);
 }, 200);

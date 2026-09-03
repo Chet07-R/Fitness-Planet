@@ -1,28 +1,28 @@
 // Global Chatbot Toggle Function callable directly from HTML or JS
-window.toggleGlobalChatbot = function() {
+window.toggleGlobalChatbot = function(e) {
+  if (e && e.stopPropagation) {
+    e.stopPropagation();
+  }
+
   let chatbox = document.querySelector('.chatbox');
 
   // If no chatbox exists on page, dynamically create floating widget
   if (!chatbox) {
     chatbox = document.createElement('div');
-    chatbox.className = 'chatbox glass-card chatbox-popup active';
+    chatbox.className = 'chatbox active';
     chatbox.innerHTML = `
-      <div class="chat-header">
-        <div class="bot-info">
-          <div class="bot-avatar-badge">FP</div>
+      <div class="chat-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:8px;">
+        <div class="bot-info" style="display:flex; align-items:center; gap:8px;">
+          <div class="bot-avatar-badge" style="width:28px; height:28px; border-radius:50%; background:#f1c40f; color:#000; font-weight:bold; font-size:12px; display:flex; align-items:center; justify-content:center;">FP</div>
           <div>
-            <h3>Fitness Planet AI</h3>
-            <span class="status-online">Online</span>
+            <h3 style="font-size:0.95rem; margin:0; color:#fff;">Fitness Planet AI</h3>
+            <span class="status-online" style="font-size:0.75rem; color:#10b981;">Online</span>
           </div>
         </div>
-        <button type="button" class="chat-close-btn" style="background:none; border:none; color:#ffffff; font-size:1.5rem; cursor:pointer; padding:4px 8px;">&times;</button>
+        <button type="button" class="chat-close-btn" style="background:none; border:none; color:#ffffff; font-size:1.5rem; cursor:pointer; padding:0 6px; line-height:1;">&times;</button>
       </div>
       <div class="chat-container">
         <div class="h1">How can I assist your fitness journey today?</div>
-        <div class="quick-prompts">
-          <button type="button" class="prompt-chip">Suggest a Leg Workout</button>
-          <button type="button" class="prompt-chip">Healthy Meal Ideas</button>
-        </div>
       </div>
       <div class="input-area">
         <input type="text" class="prompt" placeholder="Ask about workouts or nutrition...">
@@ -31,17 +31,15 @@ window.toggleGlobalChatbot = function() {
     `;
     document.body.appendChild(chatbox);
 
+    // Prevent click events inside chatbox from bubbling to document
+    chatbox.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+
     // Bind inner widget handlers
     bindChatboxEvents(chatbox);
   } else {
-    // If chatbox exists, ensure popup styling & toggle active class
-    chatbox.classList.add('chatbox-popup');
     chatbox.classList.toggle('active');
-    
-    // Smooth scroll into view if static section
-    if (!chatbox.classList.contains('chatbox-popup')) {
-      chatbox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
   }
 
   const promptInput = chatbox.querySelector('.prompt');
@@ -56,10 +54,12 @@ function bindChatboxEvents(chatbox) {
   const h1 = chatbox.querySelector('.h1');
   const prompt = chatbox.querySelector('.prompt');
   const chatbtn = chatbox.querySelector('.input-area button');
-  const promptChips = chatbox.querySelectorAll('.prompt-chip');
 
   if (closeBtn) {
-    closeBtn.onclick = () => chatbox.classList.remove('active');
+    closeBtn.onclick = (e) => {
+      e.stopPropagation();
+      chatbox.classList.remove('active');
+    };
   }
 
   let userMessage = '';
@@ -110,7 +110,7 @@ function bindChatboxEvents(chatbox) {
   }
 
   function showLoading() {
-    const html = `<p class="text"></p><span class="loading" style="font-size:0.8rem; color:#ff6b00;">Thinking...</span>`;
+    const html = `<p class="text"></p><span class="loading" style="font-size:0.8rem; color:#f1c40f;">Thinking...</span>`;
     let aiChatBox = createChatBox(html, "ai-chat-box");
     chatContainer.appendChild(aiChatBox);
     scrollToBottom();
@@ -120,8 +120,6 @@ function bindChatboxEvents(chatbox) {
   function sendMessage(msgText) {
     if (!msgText.trim()) return;
     if (h1) h1.style.display = 'none';
-    const promptChipsContainer = chatbox.querySelector('.quick-prompts');
-    if (promptChipsContainer) promptChipsContainer.style.display = 'none';
 
     userMessage = msgText;
     const html = `<p class="text"></p>`;
@@ -142,30 +140,23 @@ function bindChatboxEvents(chatbox) {
       }
     };
   }
-
-  promptChips.forEach(chip => {
-    chip.onclick = () => sendMessage(chip.innerText);
-  });
 }
 
 function initializeChatbot() {
-  const chatbotIcon = document.querySelector('.chatboticon');
   const existingChatbox = document.querySelector('.chatbox');
-
-  if (chatbotIcon) {
-    chatbotIcon.onclick = window.toggleGlobalChatbot;
-  }
-
   if (existingChatbox) {
+    existingChatbox.addEventListener('click', (e) => e.stopPropagation());
     bindChatboxEvents(existingChatbox);
   }
 }
 
-// Auto Attach Event Listener to Document Body (Delegation)
+// Single Unified Click Handler on document body for Chatbot Icon
 document.addEventListener('click', function(e) {
-  if (e.target && (e.target.classList.contains('chatboticon') || e.target.closest('.chatboticon'))) {
+  const icon = e.target.closest('.chatboticon');
+  if (icon) {
     e.preventDefault();
-    window.toggleGlobalChatbot();
+    e.stopPropagation();
+    window.toggleGlobalChatbot(e);
   }
 });
 
