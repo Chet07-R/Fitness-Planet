@@ -176,14 +176,61 @@ hr {
     }
 }
 
-@media (max-width: 768px) {
-    .row {
-        width: 90%;
-    }
-    .col {
-        flex-basis: 100% !important;
-        margin-bottom: 20px;
-    }
+/* Newsletter Styling */
+.newsletter-box {
+    margin-top: 20px;
+}
+
+.newsletter-box h4 {
+    font-family: var(--font-heading, 'Outfit', sans-serif);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    padding: 4px 4px 4px 14px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-family: var(--font-body, sans-serif);
+    font-size: 0.85rem;
+    width: 100%;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.newsletter-form button {
+    background: #f1c40f;
+    color: #0a0a0a;
+    font-family: var(--font-heading, 'Outfit', sans-serif);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 8px 18px;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background: #ffd700;
+    transform: scale(1.04);
 }
 
 
