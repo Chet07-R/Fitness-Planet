@@ -100,6 +100,14 @@ let cards = document.querySelectorAll(".card");
 let stackArea = document.querySelector(".stack-area");
 
 function rotateCards() {
+    if (window.innerWidth <= 768) {
+        cards.forEach((card) => {
+            card.style.transform = "none";
+            card.style.zIndex = "1";
+        });
+        return;
+    }
+
     let angle = 0;
     cards.forEach((card, index) => {
         if (card.classList.contains("away")) {
@@ -115,6 +123,7 @@ function rotateCards() {
 rotateCards();
 
 window.addEventListener("scroll", () => {
+    if (!stackArea || window.innerWidth <= 768) return;
     let distance = window.innerHeight * 0.5;
 
     let topVal = stackArea.getBoundingClientRect().top;
@@ -123,7 +132,7 @@ window.addEventListener("scroll", () => {
 
     index = Math.floor(index);
 
-    for (i = 0; i < cards.length; i++) {
+    for (let i = 0; i < cards.length; i++) {
         if (i <= index) {
             cards[i].classList.add("away");
         } else {
@@ -132,6 +141,8 @@ window.addEventListener("scroll", () => {
     }
     rotateCards();
 });
+
+window.addEventListener("resize", rotateCards);
 
 // chat-bot
 
@@ -177,7 +188,6 @@ if (chatbtnEl && promptEl && chatContainerEl) {
             if (loadingImg) loadingImg.style.display = "none";
         }
     }
-
     function showLoading() {
         const html = `<p class="text"></p>
         <img src="pictures/load.gif" class="loading" width="50px">`;
@@ -213,6 +223,38 @@ if (chatbtnEl && promptEl && chatContainerEl) {
         }
     });
 }
+
+// Scroll-to-Top Floating Action Button
+document.addEventListener('DOMContentLoaded', () => {
+    let scrollTopBtn = document.getElementById('scroll-top-btn');
+    if (!scrollTopBtn) {
+        scrollTopBtn = document.createElement('button');
+        scrollTopBtn.id = 'scroll-top-btn';
+        scrollTopBtn.setAttribute('aria-label', 'Scroll to top');
+        scrollTopBtn.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        `;
+        document.body.appendChild(scrollTopBtn);
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    const toggleScrollTopBtn = () => {
+        if (window.scrollY > 350) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    };
+
+    window.addEventListener('scroll', toggleScrollTopBtn, { passive: true });
+    toggleScrollTopBtn();
+});
+
 
 
 

@@ -96,7 +96,7 @@ function setupMobileMenu() {
         };
 
         // Close menu when clicking any nav link
-        const navLinks = navMenu.querySelectorAll('a');
+        const navLinks = navMenu.querySelectorAll('a, .chatboticon');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('open');
@@ -106,7 +106,8 @@ function setupMobileMenu() {
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+            const navContainer = document.getElementById('nav');
+            if (navContainer && !navContainer.contains(e.target) && navMenu.classList.contains('show')) {
                 menuToggle.classList.remove('open');
                 navMenu.classList.remove('show');
             }
@@ -126,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('scroll', highlightActiveNavLink, { passive: true });
 window.addEventListener('hashchange', highlightActiveNavLink);
 
-// Run repeatedly on load to catch async navbar fetch
+// Run repeatedly on load to catch async navbar fetch across all pages
 let checkCount = 0;
 const intervalId = setInterval(() => {
     highlightActiveNavLink();
@@ -134,3 +135,5 @@ const intervalId = setInterval(() => {
     checkCount++;
     if (checkCount > 10) clearInterval(intervalId);
 }, 200);
+
+

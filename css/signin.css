@@ -160,17 +160,35 @@ form {
 
 .input-box input:focus {
     border-color: #f1c40f;
-    box-shadow: 0 0 12px rgba(241, 196, 15, 0.35);
+    box-shadow: 0 0 14px rgba(241, 196, 15, 0.4);
 }
 
 .input-box i {
     position: absolute;
-    right: 18px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.2rem;
     color: #f1c40f;
+}
+
+.input-box i.icon-lock,
+.input-box i.bxs-user,
+.input-box i.bxs-envelope {
+    right: 18px;
     pointer-events: none;
+}
+
+.input-box i.toggle-password {
+    right: 48px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 4px;
+}
+
+.input-box i.toggle-password:hover {
+    color: #f1c40f;
+    transform: translateY(-50%) scale(1.15);
 }
 
 .forgot-link {
@@ -306,8 +324,76 @@ form {
 }
 
 @media (max-width: 768px) {
+    .page-wrapper {
+        padding: 90px 16px 30px;
+    }
+
     .container {
-        height: 600px;
         width: 100%;
+        max-width: 440px;
+        height: auto;
+        min-height: 520px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-box {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 30px 20px;
+        right: 0 !important;
+    }
+
+    .form-box.register {
+        display: none;
+    }
+
+    .container.active .form-box.login {
+        display: none;
+    }
+
+    .container.active .form-box.register {
+        display: flex;
+        visibility: visible;
+    }
+
+    .toggle-box {
+        position: relative;
+        height: auto;
+    }
+
+    .toggle-box::before {
+        display: none;
+    }
+
+    .toggle-panel {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        background: rgba(241, 196, 15, 0.15);
+        border-top: 1px solid rgba(241, 196, 15, 0.3);
+    }
+
+    .toggle-left, .toggle-right {
+        left: 0 !important;
+        right: 0 !important;
+    }
+
+    .toggle-left {
+        display: flex;
+    }
+
+    .container.active .toggle-left {
+        display: none;
+    }
+
+    .toggle-right {
+        display: none;
+    }
+
+    .container.active .toggle-right {
+        display: flex;
     }
 }
