@@ -353,59 +353,91 @@ html.dark .stats {
 }
 
 @media (max-width: 768px) {
-h1 {
-    font-size: 2.5rem;
-}
+  header {
+    padding: 100px 20px 50px;
+  }
 
-h2 {
-    font-size: 2rem;
-}
+  h1 {
+    font-size: 2.3rem;
+  }
 
-.overlay h4 {
-    font-size: 24px; /* Smaller font size on mobile */
-}
+  h2 {
+    font-size: 1.8rem;
+  }
 
-.overlay p {
-    font-size: 14px; /* Smaller font size on mobile */
-}
+  .subtitle {
+    font-size: 1.1rem;
+  }
 
-.mission-text {
+  #cards-container {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 16px;
+    gap: 24px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 340px;
+    height: 380px;
+    margin: 0 auto;
+  }
+
+  .overlay h4 {
+    font-size: 24px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  .mission {
+    padding: 50px 20px;
+  }
+
+  .mission-text {
     font-size: 1rem;
-}
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .stat-item h3 {
+    font-size: 2.2rem;
+  }
+
+  .stat-item p {
+    font-size: 0.95rem;
+  }
+
+  .cta {
+    padding: 50px 20px;
+  }
 }
 
 @media (max-width: 480px) {
-h1 {
-    font-size: 2rem;
-}
+  h1 {
+    font-size: 1.8rem;
+  }
 
-h2 {
+  h2 {
     font-size: 1.5rem;
-}
+  }
 
-.overlay h4 {
+  .overlay h4 {
     font-size: 20px;
-}
-}
-
-@media (max-width: 768px) {
-#cards-container {
-    flex-direction: column;
-    height: auto;
-    padding: 40px 0;
-}
-
-.card {
-    width: 85%;
+  }
+  
+  .card {
     height: 350px;
-    margin: 15px auto;
-}
+  }
 }
 
 /* Global text overflow prevention */
 p, h1, h2, h3, h4, h5, h6, span, a {
-overflow-wrap: break-word;
-word-wrap: break-word;
-word-break: break-word;
-hyphens: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
